@@ -50,6 +50,9 @@ For OS/X and Unix/Linux (from within the repository directory; use full path to 
 ```
 ./crispy-pancake
 ```
+Build and run success:
+![Success](https://github.com/StruszSoft/crispy-pancake/blob/master/success.png)
+
 Finally, create and initialize a new repository; the `master` branch should be marked as protected, with an issue detailing the specific protections applied.  To verify this, go to 'Settings' for the new repository, select 'Branches', and check for 'Branch protection rule'; if this is present, the `master` branch was protected.  Click 'Edit' to view the details of the protection(s) applied.
 
 ## Future Improvements ##
