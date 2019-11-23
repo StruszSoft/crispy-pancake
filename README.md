@@ -31,12 +31,12 @@ import "github.com/google/go-github/github" // with go modules disabled
 ```
 Update the following variables in crispy-pancake.go:
 ```
-var webhookSecret := "WEBHOOK_SECRET"                 //Must include your Webhook Secret here
-var personalAccessToken := "PERSONAL_ACCESS_TOKEN"    //Must include your PAT here
-var userToTag := "@GITHUB_USER"                       //Must include the user to tag in new issues here
-var entryPoint := "/webhook"                          //Change as desired
-var listenPort := ":3000"                             //Change as desired
-var issueTitle := "Branch Auto-Protected"             //Change as desired
+const webhookSecret := "WEBHOOK_SECRET"                 //Must include your Webhook Secret here
+const personalAccessToken := "PERSONAL_ACCESS_TOKEN"    //Must include your PAT here
+const userToTag := "@GITHUB_USER"                       //Must include the user to tag in new issues here
+const entryPoint := "/webhook"                          //Change as desired
+const listenPort := ":3000"                             //Change as desired
+const issueTitle := "Branch Auto-Protected"             //Change as desired
 ```
 Build crispy-pancake:
 ```go
