@@ -22,12 +22,12 @@ import (
 	"golang.org/x/oauth2"
 )
 
-var webhookSecret = "WEBHOOK_SECRET"
-var personalAccessToken = "PERSONAL_ACCESS_TOKEN"
-var entryPoint = "/webhook"
-var listenPort = ":3000"
-var userToTag = "@GITHUB_USER"
-var issueTitle = "Branch Auto-Protected" // Change as desired
+const webhookSecret := "WEBHOOK_SECRET"                 	//Must include your Webhook Secret here
+const personalAccessToken := "PERSONAL_ACCESS_TOKEN"    	//Must include your PAT here
+const userToTag := "@GITHUB_USER"                       	//Must include the user to tag in new issues here
+const entryPoint := "/webhook"                          	//Change as desired
+const listenPort := ":3000"                             	//Change as desired
+const issueTitle := "Branch Auto-Protected"			//Change as desired
 
 // Listen for calls to the server and act on organization events from GitHub
 func handleWebhook(w http.ResponseWriter, r *http.Request) {
