@@ -36,7 +36,7 @@ var personalAccessToken := "PERSONAL_ACCESS_TOKEN"    //Must include your PAT he
 var userToTag := "@GITHUB_USER"                       //Must include the user to tag in new issues here
 var entryPoint := "/webhook"                          //Change as desired
 var listenPort := ":3000"                             //Change as desired
-var issueTitle := "Branch Auto-Protected"	            //Change as desired
+var issueTitle := "Branch Auto-Protected"             //Change as desired
 ```
 Build crispy-pancake:
 ```go
