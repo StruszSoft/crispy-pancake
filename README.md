@@ -9,6 +9,12 @@ crispy-pancake is a simple web service to auto-protect the `master` branches of 
 * The [golang/oauth2](https://github.com/golang/oauth2) library
 * An Organization Webhook that gets triggered for repository events; [more details](#installing-a-webhook)
 
+### Personal Access Tokens ###
+To create a personal access token, go to 'Settings' for your user account, select 'Developer Settings', then 'Personal Access Tokens').  Generate a new token with the following scopes:  'repo', 'admin:org', 'admin:org_hook', and 'write:discussion'.  Paste the new token into a temporary document (you won't be able to view it later). Do not save this document (it's got secrets!), just leave it to hang around for a few minutes.  Once we've pasted this token into crispy-pancake, you won't need it.  [Full PAT documentation](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
+ 
+### Installing a Webhook ###
+From the Organization page, go to 'Settings'.  Click 'Webhooks'.  For the 'Payload URL', enter the URL of the server that will host crispy-pancake.  Use the variable you defined in `entryPoint` after the name/IP of the public site (ie, https://www.example.com/webhook).  For 'Secret', you may enter any string you like; be sure to enter the same string for the `webhookSecret` variable.  Choose the option to "Let me select individual events", and select 'Repositories'.  Make sure it's 'Active', and click 'Update webhook'.
+
 ## Usage ##
 Install the golang/oauth2 library:
 ```go
@@ -44,15 +50,10 @@ For OS/X and Unix/Linux (from within the repository directory; use full path to 
 ```
 ./crispy-pancake
 ```
-Finally, create and initialize a new repository; the `master` branch should be marked as protected, with an issue detailing the specific protections applied.  To verify this, go to 'Settings' for the new repository, select 'Branches', and check for 'Branch protection rule.  You can click 'Edit' to view the details of the protection(s) applied.
-
-## Personal Access Tokens ##
-To create a personal access token, go to 'Settings' for your user account, select 'Developer Settings', then 'Personal Access Tokens').  Generate a new token with the following scopes:  'repo', 'admin:org', 'admin:org_hook', and 'write:discussion'.  Paste the new token into a temporary document (you won't be able to view it later). Do not save this document (it's got secrets!), just leave it to hang around for a few minutes.  Once we've pasted this token into crispy-pancake, you won't need it.  [Full PAT documentation](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
- 
-## Installing a Webhook ##
-From the Organization page, go to 'Settings'.  Click 'Webhooks'.  For the 'Payload URL', enter the URL of the server that will host crispy-pancake.  Use the variable you defined in `entryPoint` after the name/IP of the public site (ie, https://www.example.com/webhook).  For 'Secret', you may enter any string you like; be sure to enter the same string for the `webhookSecret` variable.  Choose the option to "Let me select individual events", and select 'Repositories'.  Make sure it's 'Active', and click 'Update webhook'.
+Finally, create and initialize a new repository; the `master` branch should be marked as protected, with an issue detailing the specific protections applied.  To verify this, go to 'Settings' for the new repository, select 'Branches', and check for 'Branch protection rule'; if this is present, the `master` branch was protected.  Click 'Edit' to view the details of the protection(s) applied.
 
 ## Future Improvements ##
 * Allow easy end-user customization of specific protection requirements
 * Prompt for required customizations on first run
+* GUI
 * crispier pancakes
