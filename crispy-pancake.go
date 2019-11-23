@@ -5,7 +5,7 @@
 	by protecting the master branch for the new repo and creating an issue describing
 	the protections applied, tagging a user in the process.
 
-	This i my first foray into Go (hey, I figure if I'm supposed to show that I can
+	This is my first foray into Go (hey, I figure if I'm supposed to show that I can
 	learn new things quickly, what better way, right?), so I apologize if I've violated
 	ALL the conventions and offended thine eyes.  That doesn't sound sincere, but it is.
 
